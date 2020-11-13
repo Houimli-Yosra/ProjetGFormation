@@ -1,0 +1,58 @@
+﻿@*@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<address>
+    One Microsoft Way<br />
+    Redmond, WA 98052-6399<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>*@
+
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Bienvenue chez Dawan</title>
+</head>
+<body>
+    <h1>Formulaire de demande d'information </h1>
+    <form method="post">
+        <fieldset>
+            <legend>Coordonées</legend>
+            <p>
+                <label for="Nom">Nom </label>
+                <input type="text" name="Nom" value="@Request.Form["Nom"]" />
+            </p>
+
+            <p>
+                <label for="Prenom">Prenom </label>
+                <input type="text" name="Prenom" value="@Request.Form["Prenom"]" />
+            </p>
+
+            <p>
+                <label for="E-mail">E-mail </label>
+                <input type="text" name="E-mail" value="@Request.Form["E-mail"]"  placeholder="john-doe@mail.com"/>
+                
+            </p>
+
+            <p>
+                @*<label for="Message"> Message</label>
+                <input type="text" name="Message" value="@Request.Form["Message"]" />*@
+                
+                    <label for="msg">Votre message :</label>
+                    <textarea id="msg" name="Message" value="@Request.Form["Message"]"></textarea>
+                
+            </p>
+            <p><input type="submit" name="buttonSubmit" value="Envoyer le message" /></p>
+        </fieldset>
+    </form>
+</body>
+</html>
